@@ -1,5 +1,5 @@
-function Contact (){
-    return <h1>Bolgs about CA Rajesh kandoi And Associates.</h1>;
+function Blogs() {
+  return <h1>Blogs about CA Rajesh Kandoi And Associates.</h1>;
 }
 
-export default Contact;
+export default Blogs;
