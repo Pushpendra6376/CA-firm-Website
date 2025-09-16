@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/CA-RKA-full-logo.png";
+import logo from "../assets/RKA-name-logo.png"; // Ensure you have a logo image in the specified path
 
 function Navbar() {
   return (
