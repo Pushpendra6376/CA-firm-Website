@@ -26,3 +26,19 @@ main {
   min-height: 80vh;
   padding: 2rem;
 }
+
+
+.contact-banner {
+  /* This padding creates the necessary space to clear the fixed navbar */
+  padding-top: 80px; /* Adjust this value to match your navbar's height */
+
+  /* Rest of the .contact-banner styles you already have */
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,0 +1,199 @@
+/* About.css */
+
+/* General page padding */
+.about-page {
+  padding: 2rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Section headings */
+.about-page section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #187bd7;
+  position: relative;
+}
+
+.about-page section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #187bd7;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* General sections spacing */
+.about-header,
+.who-we-are,
+.our-vision,
+.our-mission,
+.core-values,
+.industries,
+.why-choose-us,
+.contact-section {
+  margin-bottom: 3rem;
+}
+
+/* ------------------------ Core Values ------------------------ */
+
+/* Core Values Grid */
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Individual Value Card */
+.value {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  text-align: center;
+  flex: 1 1 250px;
+  max-width: 280px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Circle for Core Values */
+.value .icon-circle {
+  background-color: #187bd7;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value:hover .icon-circle {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.value h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.value p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ------------------------ Industries ------------------------ */
+
+/* Industries Grid */
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Individual Industry Card */
+.industry {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  text-align: center;
+  flex: 1 1 220px;
+  max-width: 260px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Circle for Industries */
+.industry .icon-circle {
+  background-color: #187bd7;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry:hover .icon-circle {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.industry h3 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.industry p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ------------------------ Why Choose Us ------------------------ */
+
+.why-choose-us ul {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+}
+
+.why-choose-us li {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.why-choose-us li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #187bd7;
+}
+
+/* ------------------------ Contact Section ------------------------ */
+
+.contact-section p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .value, .industry {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

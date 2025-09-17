@@ -15,7 +15,7 @@ const Contact = () => {
       <div className="contact-section">
         {/* Contact Form Section */}
         <div className="contact-form">
-          <h2>Get in Touch</h2>
+          <h2>Let’s Work Together</h2>
           <ContactForm /> {/* ✅ Use the EmailJS-enabled form */}
         </div>
 
