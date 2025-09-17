@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/RKA-name-logo.png"; // Ensure you have a logo image in the specified path
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import logo from "../assets/RKA-name-logo.png";
+import "../styles/Navbar.css";
 
 function Navbar() {
   return (
@@ -13,6 +16,14 @@ function Navbar() {
         <li><Link to="/blogs">Blogs</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        <li className="search-label">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search-input"
+          />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </li>
       </ul>
     </nav>
   );

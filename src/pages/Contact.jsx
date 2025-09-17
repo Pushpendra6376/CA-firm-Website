@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhoneVolume, faSquareEnvelope } from '@fortawesome/free-solid-svg-icons';
 import contactImage from '../assets/contact-us-image.jpg';
 import ContactForm from "../components/ContactForm";
+import '../styles/Contact.css';
 
 const Contact = () => {
   return (
