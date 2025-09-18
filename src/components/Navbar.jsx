@@ -1,21 +1,39 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/RKA-name-logo.png";
 import "../styles/Navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+  
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="CA Rajesh Kandoi Associates" />
+        <Link to="/" onClick={closeMenu}>
+            <img src={logo} alt="CA Rajesh Kandoi Associates" />
+        </Link>
       </div>
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><Link to="/blogs">Blogs</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+
+      <div className="menu-toggle" onClick={handleMenuToggle}>
+        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+      </div>
+
+      <ul className={menuOpen ? "navbar-links active" : "navbar-links"}>
+        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+        <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
+        <li><Link to="/blogs" onClick={closeMenu}>Blogs</Link></li>
+        <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         <li className="search-label">
           <input
             type="text"

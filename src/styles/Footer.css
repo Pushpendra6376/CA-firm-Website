@@ -1,8 +1,120 @@
-/* Footer */
+/* --- Main Footer Styling --- */
 .footer {
+  background-color: #08101a; /* A darker, more professional blue */
+  color: #cdd3dc; /* A soft off-white for text */
+  padding-top: 3rem;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Underline effect for headings */
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 2px;
+  background-color: #187bd7; /* Your primary blue color */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-section a {
+  color: #cdd3dc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+}
+
+/* --- Specific Section Styles --- */
+.footer-section.about p {
+  line-height: 1.7;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1rem;
+  background-color: white; /* Add a background if logo isn't transparent */
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.footer-section.contact svg {
+  margin-right: 10px;
+  margin-top: 4px;
+  color: #187bd7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom {
   text-align: center;
-  background-color: #187bd7;
-  color: white;
   padding: 1rem 0;
   margin-top: 2rem;
+  background-color: #08101a; /* Even darker for contrast */
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+  }
+  .footer-section.about, .footer-section.social {
+    grid-column: span 2; /* Make about and social full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    grid-template-columns: 1fr; /* Single column on phones */
+    text-align: center;
+  }
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-section.contact li {
+    justify-content: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
 }
