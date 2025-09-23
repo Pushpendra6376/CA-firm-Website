@@ -1,0 +1,347 @@
+/* --- Global Variables (from index.css) --- */
+:root {
+  --primary-color: #187bd7;
+  --dark-blue: #0d1a2e;
+  --text-primary: #333333;
+  --text-secondary: #555;
+  --bg-light: #f9fafb;
+  --bg-white: #ffffff;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+  --border-color: #e5e7eb;
+}
+
+/* --- General Page & Button Styles --- */
+.careers-page {
+  background-color: var(--bg-white);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.cta-button:hover {
+  background-color: var(--dark-blue);
+}
+
+/* --- Hero Section - UPDATED to match Blog Style --- */
+.careers-hero {
+  position: relative; /* Crucial for the overlay */
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  height: 40vh;
+  min-height: 250px;
+  overflow: hidden; /* Ensures pseudo-element doesn't overflow */
+}
+
+/* This is the background image */
+.careers-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* This pseudo-element creates the dark overlay */
+.careers-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(40, 39, 39, 0.85), rgba(40, 39, 39, 0.85));
+    z-index: 2;
+}
+
+/* This is the text container */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3; /* Puts the text on top of the overlay */
+  max-width: 800px;
+  margin: 0 auto;
+  /* Removed background-color from here to use the full overlay */
+  padding: 2rem; 
+}
+
+.careers-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.careers-hero p {
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* --- Job Openings Section --- */
+.job-openings-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+.section-header h2 {
+  font-size: 2.2rem;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+.section-header p {
+  color: var(--text-secondary);
+}
+
+/* Job Listings Grid */
+.job-listings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .job-listings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .job-listings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.job-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+}
+.job-card-header {
+    flex-grow: 1;
+}
+.job-card-header h3 {
+  font-size: 1.5rem;
+  color: var(--dark-blue);
+}
+.job-card-header p {
+  margin: 0.5rem 0 1rem 0;
+  color: var(--text-secondary);
+}
+.job-card-footer {
+    margin-top: 1rem;
+}
+.details-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- Job Detail Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+.modal-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content h2 {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+}
+.modal-body h4 {
+  font-size: 1.3rem;
+  color: var(--dark-blue);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+.qualifications-list {
+  list-style: none;
+  padding-left: 0;
+}
+.qualifications-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+.qualifications-list li span {
+  color: #22c55e;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+/* Key Result Areas (KRAs) */
+.kras-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.kra-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+.kra-icon-wrapper {
+    background-color: rgba(24, 123, 215, 0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.kra-icon {
+    font-size: 1.5rem;
+}
+.kra-info {
+    display: flex;
+    flex-direction: column;
+}
+.kra-title {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+.kra-target {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+}
+
+/* Tabs for Responsibilities */
+.tabs-container { margin-top: 1rem; }
+.tab-headers { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.tab-header { background: #f3f4f6; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 0.5rem 1rem; cursor: pointer; }
+.tab-header.active { background: var(--primary-color); color: white; font-weight: 500; border-color: var(--primary-color); }
+.tab-content { background: var(--bg-light); padding: 1rem; border-radius: var(--border-radius); }
+
+/* Skills Chart */
+.skills-chart-wrapper { height: 350px; margin: 1.5rem auto; }
+
+/* AI Interview Prep Section */
+.ai-interview-prep { background: linear-gradient(to right, #e0f7fa, #e8eaf6); padding: 1.5rem; border-radius: var(--border-radius); text-align: center; margin-top: 2rem; }
+.ai-interview-prep h5 { font-size: 1.2rem; color: var(--dark-blue); }
+.ai-buttons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.ai-button { background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: var(--border-radius); cursor: pointer; font-weight: 500; }
+
+.apply-button { margin-top: 2rem; width: 100%; text-align: center; }
+
+/* --- Application Form Section --- */
+.application-form-section {
+  padding: 4rem 2rem;
+  background-color: var(--bg-light);
+}
+.application-form-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+.application-form-section p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+.application-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+    .application-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.form-group { display: flex; flex-direction: column; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea { padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem; }
+.form-submit-area { grid-column: 1 / -1; text-align: center; }
+.status-message { margin-top: 1rem; font-weight: 500; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .careers-hero { min-height: 40vh; }
+  .careers-hero h1 { font-size: 2.2rem; }
+  .job-openings-section { padding: 3rem 1rem; }
+  .kras-container { grid-template-columns: 1fr; }
+}
+

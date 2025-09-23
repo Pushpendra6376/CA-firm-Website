@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
+import ComplianceCalendar from "./pages/Compliance-calendar";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/compliance-calendar" element={<ComplianceCalendar />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </main>
       <Footer />

@@ -31,9 +31,11 @@ function Navbar() {
       <ul className={menuOpen ? "navbar-links active" : "navbar-links"}>
         <li><Link to="/" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
+        <li><Link to="/compliance-calendar" onClick={closeMenu}>Compliance Calendar</Link></li>
+        <li><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
         <li><Link to="/blogs" onClick={closeMenu}>Blogs</Link></li>
         <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+        <li><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
         <li className="search-label">
           <input
             type="text"

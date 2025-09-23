@@ -11,6 +11,8 @@
   height: 240px;
   object-fit: cover;
   display: block;
+  height: 40vh;
+  min-height: 250px;
 }
 
 /* --- Contact Details Cards Section --- */
