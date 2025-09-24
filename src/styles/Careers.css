@@ -237,49 +237,6 @@
   font-weight: bold;
 }
 
-/* Key Result Areas (KRAs) */
-.kras-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-.kra-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--bg-light);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-}
-.kra-icon-wrapper {
-    background-color: rgba(24, 123, 215, 0.1);
-    color: var(--primary-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-.kra-icon {
-    font-size: 1.5rem;
-}
-.kra-info {
-    display: flex;
-    flex-direction: column;
-}
-.kra-title {
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-.kra-target {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--dark-blue);
-}
-
 /* Tabs for Responsibilities */
 .tabs-container { margin-top: 1rem; }
 .tab-headers { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
@@ -289,12 +246,6 @@
 
 /* Skills Chart */
 .skills-chart-wrapper { height: 350px; margin: 1.5rem auto; }
-
-/* AI Interview Prep Section */
-.ai-interview-prep { background: linear-gradient(to right, #e0f7fa, #e8eaf6); padding: 1.5rem; border-radius: var(--border-radius); text-align: center; margin-top: 2rem; }
-.ai-interview-prep h5 { font-size: 1.2rem; color: var(--dark-blue); }
-.ai-buttons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-.ai-button { background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: var(--border-radius); cursor: pointer; font-weight: 500; }
 
 .apply-button { margin-top: 2rem; width: 100%; text-align: center; }
 

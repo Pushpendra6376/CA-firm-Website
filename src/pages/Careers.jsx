@@ -25,12 +25,6 @@ const allJobData = [
             { title: 'Meeting & Event Coordination', content: 'Organize logistics for internal and external meetings, including preparing agendas, taking minutes, and coordinating follow-up actions.' },
             { title: 'Document & Information Management', content: 'Organize and maintain physical and digital files for easy retrieval. Assist in preparing presentations, reports, and handle confidential information.' }
         ],
-        kras: [
-            { icon: faClock, title: "CA's Time Optimization", target: "20% Reduction" },
-            { icon: faCheckCircle, title: "Meeting Schedule Adherence", target: "95%" },
-            { icon: faBullseye, title: "Communication Accuracy", target: "99%" },
-            { icon: faStar, title: "Zero Missed Appointments", target: "0" }
-        ],
         skills: { labels: ['Communication', 'Organization', 'Proactiveness', 'Discretion', 'Tech Savvy', 'Problem Solving'], data: [95, 98, 90, 99, 85, 88] }
     },
     {
@@ -44,12 +38,6 @@ const allJobData = [
             { title: 'Training & Development', content: 'Identify training needs and create development programs for employees, including training on new AI tools.' },
             { title: 'Employee Engagement', content: 'Develop and implement initiatives to foster a positive work environment. Act as a point of contact for employee grievances.' },
             { title: 'Performance Management', content: 'Oversee the performance appraisal process, providing guidance to managers and ensuring fairness and consistency.' }
-        ],
-        kras: [
-            { icon: faClock, title: "Recruitment Efficiency", target: "15% Reduction" },
-            { icon: faCheckCircle, title: "New Hire Retention (6 months)", target: "90%" },
-            { icon: faBullseye, title: "AI Training Participation", target: "90%" },
-            { icon: faStar, title: "Employee Satisfaction Score", target: "85%" }
         ],
         skills: { labels: ['Recruitment', 'Training', 'Employee Relations', 'Performance Mgmt', 'Labor Law', 'Adaptability'], data: [95, 90, 92, 88, 94, 85] }
     },
@@ -65,12 +53,6 @@ const allJobData = [
             { title: 'Client Retention & Growth', content: 'Develop retention strategies and identify opportunities to offer additional services to existing clients.' },
             { title: 'Reporting & Analysis', content: 'Track key account metrics and provide regular reports on client satisfaction and relationship health.' }
         ],
-        kras: [
-            { icon: faCheckCircle, title: "Client Satisfaction Score", target: "90%" },
-            { icon: faStar, title: "Client Retention Rate", target: "95%" },
-            { icon: faBullseye, title: "Revenue Growth (Existing Clients)", target: "10%" },
-            { icon: faClock, title: "Query Resolution Time", target: "24 Hours" }
-        ],
         skills: { labels: ['Relationship Building', 'Communication', 'Negotiation', 'Problem Solving', 'Client Focus', 'Proactiveness'], data: [98, 95, 90, 88, 96, 92] }
     },
     {
@@ -84,12 +66,6 @@ const allJobData = [
             { title: 'Marketing & Advertising', content: 'Develop and execute multi-channel marketing campaigns to build brand awareness.' },
             { title: 'Lead Generation & Nurturing', content: 'Manage the sales pipeline from lead generation to conversion. Develop strategies for nurturing leads.' },
             { title: 'Sales Team Management', content: 'Lead and mentor the sales team, setting clear targets and providing performance feedback.' }
-        ],
-        kras: [
-            { icon: faBullseye, title: "Annual New Client Revenue", target: "₹X Lakhs" },
-            { icon: faCheckCircle, title: "Lead-to-Client Conversion", target: "15%" },
-            { icon: faClock, title: "Website Traffic Growth", target: "25%" },
-            { icon: faStar, title: "Average Sales Cycle Length", target: "20% Reduction" }
         ],
         skills: { labels: ['Strategy', 'Negotiation', 'Leadership', 'Market Analysis', 'Digital Marketing', 'Results-Oriented'], data: [95, 92, 90, 88, 85, 98] }
     },
@@ -105,12 +81,6 @@ const allJobData = [
             { title: 'Auditing', content: 'Conduct statutory, tax, and internal audits, ensuring adherence to auditing standards.' },
             { title: 'Advisory & Consultancy', content: 'Provide financial advice to clients based on their business needs and financial data analysis.' }
         ],
-        kras: [
-            { icon: faCheckCircle, title: "On-time Return Filing", target: "100%" },
-            { icon: faBullseye, title: "Error Rate in Financials", target: "<0.5%" },
-            { icon: faStar, title: "Client Satisfaction Score", target: "85%" },
-            { icon: faClock, title: "AI Tool Adoption", target: "20% Time Saving" }
-        ],
         skills: { labels: ['Accounting', 'Taxation', 'Auditing', 'Financial Analysis', 'Compliance', 'AI Aptitude'], data: [95, 92, 90, 88, 98, 80] }
     },
     {
@@ -124,12 +94,6 @@ const allJobData = [
             { title: 'Data Management & Security', content: 'Implement and maintain security policies, manage data backups, and ensure data integrity.' },
             { title: 'Software & System Management', content: 'Manage software licenses, subscriptions, and vendor relationships. Evaluate and deploy new software.' },
             { title: 'MIS & Digital Presence', content: 'Develop and maintain Management Information Systems (MIS). Manage the firm’s website and social media accounts.' }
-        ],
-        kras: [
-            { icon: faClock, title: "System Uptime", target: "99.5%" },
-            { icon: faStar, title: "Zero Data Breaches", target: "0" },
-            { icon: faBullseye, title: "AI Tool Integration Success", target: "3 New Tools/Year" },
-            { icon: faCheckCircle, title: "MIS Report Accuracy", target: "98%" }
         ],
         skills: { labels: ['Network Admin', 'Cybersecurity', 'Software Mgmt', 'MIS Development', 'Problem Solving', 'AI Integration'], data: [90, 95, 88, 85, 92, 80] }
     },
@@ -145,12 +109,6 @@ const allJobData = [
             { title: 'Reporting & Documentation', content: 'Maintain accurate logs of verified tasks and prepare daily/weekly status reports.' },
             { title: 'Basic Computer Operations', content: 'Perform data entry, document scanning, and file management tasks as required.' }
         ],
-        kras: [
-            { icon: faBullseye, title: "Verification Accuracy", target: "98%" },
-            { icon: faCheckCircle, title: "On-time Verification", target: "95%" },
-            { icon: faStar, title: "Zero Critical Errors Missed", target: "0" },
-            { icon: faClock, title: "Accurate Daily Reports", target: "100%" }
-        ],
         skills: { labels: ['Attention to Detail', 'Accuracy', 'Organization', 'Reliability', 'Computer Basics', 'Learning Aptitude'], data: [99, 98, 90, 95, 85, 80] }
     },
     {
@@ -164,12 +122,6 @@ const allJobData = [
             { title: 'Implementation & Optimization', content: 'Lead the technical integration of AI tools with existing systems. Monitor performance and optimize for efficiency.' },
             { title: 'Data & Security for AI', content: 'Ensure data privacy and security in all AI implementations. Establish governance protocols for AI usage.' },
             { title: 'Training & Support', content: 'Train staff on how to use new AI tools effectively. Provide ongoing support and act as the AI subject matter expert.' }
-        ],
-        kras: [
-            { icon: faBullseye, title: "Successful AI Integrations", target: "3-5 per year" },
-            { icon: faClock, title: "Efficiency Gain from AI", target: "15% in key processes" },
-            { icon: faCheckCircle, title: "AI Tool Adoption Rate", target: "80%" },
-            { icon: faStar, title: "Zero AI-related Data Incidents", target: "0" }
         ],
         skills: { labels: ['AI/ML Concepts', 'Data Analysis', 'Integration', 'Problem Solving', 'Communication', 'Innovation'], data: [95, 90, 92, 88, 94, 98] }
     },
@@ -185,12 +137,6 @@ const allJobData = [
             { title: 'SEO & SEM Support', content: 'Assist in optimizing website content for search engines and support the execution of paid advertising campaigns.' },
             { title: 'Email Marketing & Analytics', content: 'Create and send email newsletters. Track and report on the performance of digital marketing campaigns.' }
         ],
-        kras: [
-            { icon: faClock, title: "Website Traffic Growth", target: "20%" },
-            { icon: faCheckCircle, title: "Social Media Engagement", target: "10%" },
-            { icon: faBullseye, title: "Qualified Leads (Digital)", target: "X Leads/Month" },
-            { icon: faStar, title: "Content Production", target: "4 Posts/Month" }
-        ],
         skills: { labels: ['Content Writing', 'Social Media Mgmt', 'SEO/SEM Basics', 'Email Marketing', 'Analytics', 'Creativity'], data: [90, 88, 80, 85, 82, 92] }
     }
 ];
@@ -202,10 +148,10 @@ const SkillsChart = ({ skills }) => {
         datasets: [{
             label: 'Required Proficiency',
             data: skills.data,
-            backgroundColor: 'rgba(24, 123, 215, 0.2)',
-            borderColor: 'rgba(24, 123, 215, 1)',
+            backgroundColor: 'rgba(164, 200, 233, 0.16)',
+            borderColor: 'rgba(74, 229, 43, 0.2)',
             borderWidth: 2,
-            pointBackgroundColor: 'rgba(24, 123, 215, 1)',
+            pointBackgroundColor: 'rgba(148, 24, 215, 1)',
         }]
     };
     const options = {
@@ -261,31 +207,9 @@ const JobDetailModal = ({ job, onClose, onApply }) => {
                     <h4>Key Responsibilities</h4>
                     <JobDetailsTabs responsibilities={job.responsibilities} />
 
-                    <h4>Key Result Areas</h4>
-                    <div className="kras-container">
-                        {job.kras.map((k, i) => (
-                            <div key={i} className="kra-item">
-                                <div className="kra-icon-wrapper"><FontAwesomeIcon icon={k.icon} className="kra-icon"/></div>
-                                <div className="kra-info">
-                                    <span className="kra-title">{k.title}</span>
-                                    <span className="kra-target">{k.target}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
                     <h4>Required Skills Profile</h4>
                     <p>A blend of technical and soft skills is crucial for this role. The radar chart illustrates the ideal skill set.</p>
                     <SkillsChart skills={job.skills} />
-                    
-                    <div className="ai-interview-prep">
-                        <h5>Prepare for Your Interview!</h5>
-                        <p>Use our AI-powered tools to get ready for your application process.</p>
-                        <div className="ai-buttons">
-                            <button className="ai-button">✨ Generate Interview Questions</button>
-                            <button className="ai-button">✨ Ask AI</button>
-                        </div>
-                    </div>
 
                     <button onClick={onApply} className="cta-button apply-button">Apply for this Role</button>
                 </div>
@@ -316,7 +240,7 @@ function Careers() {
             return;
         }
         setStatusMessage('Submitting application...');
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+        emailjs.sendForm('service_bpiayyu', 'template_55hilng', form.current, '1dRT9CRruIxHgpceL')
             .then((result) => {
                 console.log(result.text);
                 setStatusMessage('Application sent successfully!');

@@ -36,14 +36,7 @@ function Navbar() {
         <li><Link to="/blogs" onClick={closeMenu}>Blogs</Link></li>
         <li><Link to="/about" onClick={closeMenu}>About</Link></li>
         <li><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
-        <li className="search-label">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="search-input"
-          />
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </li>
+        <li className="search-label"><a href="tel:+918690972052">+91 8690972052</a></li>
       </ul>
     </nav>
   );
