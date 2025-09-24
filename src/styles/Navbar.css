@@ -1,3 +1,4 @@
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -15,64 +16,122 @@
   height: 50px;
 }
 
+/* New wrapper for nav links to separate them from the phone number */
+.navbar-content {
+  flex-grow: 1; /* Allows the content to take up available space */
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem; /* Centers the navigation links */
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links a {
   color: black;
   font-weight: bold;
   transition: color 0.3s;
-  padding-bottom: 5px; /* Add padding for the border effect */
+  padding-bottom: 5px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.navbar-links a:hover {
+.navbar-links > li > a:hover {
   color: #187bd7;
   border-bottom: 2px solid #187bd7;
 }
 
-.search-label {
-  display: flex;
-  align-items: center;
+/* Styles for the phone number button */
+.navbar-phone {
   border: 2px solid #187bd7;
-  padding: 0.3rem 0.4rem 0.2rem 0.4rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   background-color: #ffffff;
-  justify-content: center;
-  color: #187bd7;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.search-label a {
+.navbar-phone a {
   text-decoration: none;
   color: #187bd7;
   font-weight: bold;
 }
 
-.search-label a:hover {
-  border-bottom: none;
-  color: white;  /* Remove border on hover for phone link */
+.navbar-phone:hover {
+  background-color: #187bd7;
 }
 
- .search-label:hover {
-  
-  background-color: #187bd7;
-  /* Keep text white on hover */
+.navbar-phone:hover a {
+  color: white;
+}
+
+/* --- Dropdown Styles (Desktop) --- */
+.dropdown-container {
+  position: relative;
+}
+
+.more-btn {
+  /* Inherits styles from .navbar-links a */
+  user-select: none; /* Prevents text selection on click */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin-top: 10px;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+.dropdown-menu.active {
+  display: block; /* Shown when dropdown is open */
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+  border-bottom: none; /* No border on dropdown items */
 }
 
 .menu-toggle {
-  display: none; /* Hidden by default on large screens */
+  display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
+/* --- Responsive Styles (for screens 850px or less) --- */
+@media (max-width: 850px) {
+  /* Hide the desktop content wrapper and phone number */
+  .navbar-content,
+  .navbar-phone {
+    display: none;
+  }
+  
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+  }
 
-/* --- Responsive Styles --- */
-@media (max-width: 850px) { /* Breakpoint for tablets and phones */
-  .navbar-links {
-    display: none; /* Hide the links by default */
+  /* When the hamburger menu is active... */
+  .navbar-links.active {
+    display: flex; /* Show the list */
     flex-direction: column;
     position: absolute;
     top: 74px; /* Height of the navbar */
@@ -84,23 +143,34 @@
     gap: 1rem;
   }
 
-  .navbar-links.active {
-    display: flex; /* Show the menu when active */
+  /* Reset dropdown styles to integrate into the mobile menu */
+  .navbar-links.active .dropdown-container {
+    position: static;
+  }
+
+  /* Hide the "More" button itself on mobile */
+  .navbar-links.active .more-btn {
+    display: none;
+  }
+
+  /* Make the dropdown list always visible and styled as regular menu items */
+  .navbar-links.active .dropdown-menu {
+    display: block;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-links.active .dropdown-menu li {
+    padding: 0.5rem 0;
   }
 
   .navbar-links a:hover {
-    border-bottom: none; /* Remove border on hover for mobile menu */
-  }
-  
-  .search-label {
-    width: 80%;
-    justify-content: center;
-  }
-  .search-input {
-    width: 100%;
-  }
-
-  .menu-toggle {
-    display: block; /* Show the hamburger icon */
+    border-bottom: none; /* No border on hover in mobile menu */
+    color: #187bd7;
   }
 }

@@ -1,0 +1,152 @@
+/* --- Global Styles for the Page --- */
+.compliance-calendar-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.calendar-container {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.main-subtitle {
+    color: #4b5563;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9rem;
+}
+
+/* --- Section Styles --- */
+.compliance-section {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.add-all-btn {
+    font-weight: bold;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.add-all-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Color coding for sections */
+.compliance-section.gst .section-header { background-color: #eff6ff; }
+.compliance-section.gst .section-header h2 { color: #1d4ed8; }
+.compliance-section.gst .add-all-btn { background-color: #3b82f6; }
+.compliance-section.gst .add-all-btn:hover { background-color: #2563eb; }
+.compliance-section.gst th { background-color: #dbeafe; color: #1e40af; }
+
+.compliance-section.income-tax .section-header { background-color: #f0fdf4; }
+.compliance-section.income-tax .section-header h2 { color: #15803d; }
+.compliance-section.income-tax .add-all-btn { background-color: #22c55e; }
+.compliance-section.income-tax .add-all-btn:hover { background-color: #16a34a; }
+.compliance-section.income-tax th { background-color: #dcfce7; color: #166534; }
+
+.compliance-section.corporate-law .section-header { background-color: #faf5ff; }
+.compliance-section.corporate-law .section-header h2 { color: #7e22ce; }
+.compliance-section.corporate-law .add-all-btn { background-color: #9333ea; }
+.compliance-section.corporate-law .add-all-btn:hover { background-color: #7e22ce; }
+.compliance-section.corporate-law th { background-color: #f3e8ff; color: #6b21a8; }
+
+.subsection {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+.subsection h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+/* --- Table Styles --- */
+.table-container { overflow-x: auto; }
+table { min-width: 650px; width: 100%; border-collapse: collapse; }
+tbody tr:nth-child(odd) { background-color: #f9fafb; }
+tbody tr:hover { background-color: #f3f4f6; }
+th, td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: left; vertical-align: middle; }
+th { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+/* --- Button Styles --- */
+.add-to-calendar-btn {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.add-to-calendar-btn:hover { background-color: #4338ca; transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
+.add-to-calendar-btn.disabled { background-color: #9ca3af; cursor: not-allowed; transform: none; box-shadow: none; pointer-events: none; }
+
+/* --- Modal Styles --- */
+.modal-overlay { position: fixed; inset: 0; background-color: rgba(17, 24, 39, 0.75); display: flex; align-items: center; justify-content: center; z-index: 50; }
+.modal-content { background-color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 500px; width: 100%; text-align: center; animation: modal-fade-in 0.3s ease; }
+.modal-content h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+.modal-content p { color: #4b5563; margin-bottom: 1.5rem; }
+.modal-actions { display: flex; justify-content: center; gap: 1rem; }
+.btn-confirm { background-color: #22c55e; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-cancel { background-color: #ef4444; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
+@keyframes modal-fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .compliance-calendar-page { padding: 1rem; }
+    .calendar-container { padding: 1.5rem; }
+    .main-title { font-size: 1.75rem; }
+}
+
