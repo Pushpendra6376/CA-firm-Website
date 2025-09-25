@@ -106,8 +106,8 @@
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f0f0f0;
-  border-bottom: none; /* No border on dropdown items */
+  background-color: #f0f0f0; /* No border on dropdown items */
+  color: #187bd7; 
 }
 
 .menu-toggle {
@@ -170,7 +170,8 @@
   }
 
   .navbar-links a:hover {
-    border-bottom: none; /* No border on hover in mobile menu */
+    border-bottom: none; 
     color: #187bd7;
   }
 }
+

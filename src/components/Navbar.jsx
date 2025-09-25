@@ -13,7 +13,7 @@ function Navbar() {
   // Toggles the main hamburger menu
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
-    setDropdownOpen(false); // Close dropdown when opening/closing main menu
+    setDropdownOpen(false); 
   };
 
   // Toggles the "More" dropdown
@@ -53,7 +53,7 @@ function Navbar() {
         <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
       </div>
 
-      {/* A new wrapper for nav links and the phone number */}
+      {/*nav links and the phone number */}
       <div className="navbar-content">
         <ul className={menuOpen ? "navbar-links active" : "navbar-links"}>
           <li><Link to="/" onClick={closeAllMenus}>Home</Link></li>
@@ -73,8 +73,6 @@ function Navbar() {
           </li>
         </ul>
       </div>
-
-      {/* Phone number moved outside the list for separate styling */}
       <div className="navbar-phone">
         <a href="tel:+918690972052">+91 8690972052</a>
       </div>
