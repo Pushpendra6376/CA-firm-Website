@@ -221,45 +221,15 @@ const JobDetailModal = ({ job, onClose, onApply }) => {
 // --- Main Careers Component ---
 function Careers() {
     const [selectedJob, setSelectedJob] = useState(null);
-    const form = useRef();
-    const [resumeFile, setResumeFile] = useState(null);
-    const [statusMessage, setStatusMessage] = useState('');
 
-    const handleFileChange = (e) => {
-        setResumeFile(e.target.files[0]);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!resumeFile) {
-            setStatusMessage('Please upload your resume.');
-            return;
-        }
-        if (resumeFile.size > 1 * 1024 * 1024) { // 1MB Limit
-            setStatusMessage('File is too large. Please upload a resume under 1MB.');
-            return;
-        }
-        setStatusMessage('Submitting application...');
-        emailjs.sendForm('service_bpiayyu', 'template_55hilng', form.current, '1dRT9CRruIxHgpceL')
-            .then((result) => {
-                console.log(result.text);
-                setStatusMessage('Application sent successfully!');
-                form.current.reset();
-                setResumeFile(null);
-            }, (error) => {
-                console.log(error.text);
-                setStatusMessage('Failed to send application. Please try again.');
-            });
-    };
-    
     const handleApplyAndScroll = () => {
-        setSelectedJob(null);
+        setSelectedJob(null); // Modal band karein
         setTimeout(() => {
             const formSection = document.getElementById('application-form-section');
-            if(formSection) {
+            if (formSection) {
                 formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-        }, 100);
+        }, 100); // Thoda delay taaki modal smooth band ho
     };
 
     return (
@@ -276,9 +246,9 @@ function Careers() {
             </section>
 
             <section id="job-openings-section" className="job-openings-section">
-                <div className="section-header">
+                <div className="careers-section-header">
                     <h2>Current Job Openings</h2>
-                    <p>Click on any role below to view its detailed job description, key responsibilities, and required skills. Once you find a role that matches your aspirations, you can apply directly through our integrated application form.</p>
+                    <p>Click on any role below to view its detailed job description. Once you find a role that matches your aspirations, you can apply directly through our integrated application form.</p>
                 </div>
                 <div className="job-listings-grid">
                     {allJobData.map(job => (
@@ -300,38 +270,56 @@ function Careers() {
             <section id="application-form-section" className="application-form-section">
                 <h2>Apply Now</h2>
                 <p>Ready to take the next step? Fill out the form below to apply. We look forward to hearing from you.</p>
-                <form ref={form} onSubmit={handleSubmit} className="application-form">
+                
+                <form 
+                    action="https://formsubmit.co/rajeshkandoionline@gmail.com" 
+                    method="POST" 
+                    encType="multipart/form-data"
+                    className="application-form"
+                >
+                    {/* FormSubmit.co Configurations */}
+                    <input type="hidden" name="_subject" value="New Job Application Received!"/>
+                    <input type="hidden" name="_captcha" value="false"/>
+                    <input type="hidden" name="_template" value="table"/>
+                    {/* Optional: Redirect to a custom thank you page on your site */}
+                    {/* <input type="hidden" name="_next" value="https://yoursite.com/thank-you.html"/> */}
+
                     <div className="form-group">
-                        <label htmlFor="from_name">Full Name</label>
-                        <input type="text" id="from_name" name="from_name" required />
+                        <label htmlFor="name">Full Name</label>
+                        <input type="text" id="name" name="Name" required />
                     </div>
+
                     <div className="form-group">
-                        <label htmlFor="from_email">Email Address</label>
-                        <input type="email" id="from_email" name="from_email" required />
+                        <label htmlFor="email">Email Address</label>
+                        <input type="email" id="email" name="Email" required />
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required />
+                        <input type="tel" id="phone" name="Phone" required />
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="position">Applying for</label>
-                        <select id="position" name="position">
+                        <select id="position" name="Applying for Position">
                             {allJobData.map(job => (
                                 <option key={job.id} value={job.title}>{job.title}</option>
                             ))}
                         </select>
                     </div>
+
                     <div className="form-group full-width">
-                        <label htmlFor="resume">Upload Resume (PDF, DOC, DOCX)</label>
-                        <input type="file" id="resume" name="resume" onChange={handleFileChange} accept=".pdf,.doc,.docx" required />
+                        <label htmlFor="resume">Upload Resume (PDF, DOC, DOCX - Max 5MB)</label>
+                        <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx" required />
                     </div>
+
                     <div className="form-group full-width">
                         <label htmlFor="cover_letter">Cover Letter (Optional)</label>
-                        <textarea id="cover_letter" name="cover_letter" rows="5"></textarea>
+                        <textarea id="cover_letter" name="Cover Letter" rows="5"></textarea>
                     </div>
+
                     <div className="form-submit-area">
                         <button type="submit" className="cta-button">Submit Application</button>
-                        {statusMessage && <p className="status-message">{statusMessage}</p>}
                     </div>
                 </form>
             </section>
