@@ -1,36 +1,84 @@
-import React from "react";
-
+import React, { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import heroImage from '../assets/services-hero.png';
 import '../styles/Services.css';
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faIndustry,
-  faStore,
-  faLaptopCode,
-  faBuilding,
-  faUsers,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import industries from '../data/industries.js';
+import servicesData from '../data/ServicesData.js';
 
 
-const industries = [
-  { icon: faIndustry, title: "Manufacturing", text: "Helping industries streamline compliance, cost control, and audits." },
-  { icon: faStore, title: "Retail & Trading", text: "Simplifying GST, invoicing, and inventory-related compliances." },
-  { icon: faLaptopCode, title: "Information Technology (IT)", text: "Advising startups and IT companies on tax planning & global expansion." },
-  { icon: faUsers, title: "Startups & Entrepreneurs", text: "Providing end-to-end support, from company registration to funding & compliance." },
-  { icon: faBuilding, title: "Real Estate & Construction", text: "Specialized accounting & taxation strategies for developers and builders." },
-  { icon: faHeart, title: "NGOs & Non-Profits", text: "Ensuring compliance, audits, and financial transparency for social organizations." },
-];
+
+// --- Reusable Service Card Component with Animation ---
+const ServiceCard = ({ icon, title, description }) => {
+    const cardRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+        };
+    }, []);
+
+    return (
+        <div ref={cardRef} className={`service-card ${isVisible ? 'visible' : ''}`}>
+            <div className="service-icon-wrapper">
+                <FontAwesomeIcon icon={icon} className="service-icon" />
+            </div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </div>
+    );
+};
+
+
+
 function Services() { 
   return (
     <div className="services-page">
 
-      {/* Header for services page */}
+      <section className="services-hero" style={{ backgroundImage: `url(${heroImage})` }}>
+                <div className="hero-overlay">
+                    <h1>Our Comprehensive Services</h1>
+                    <p>
+                        At Rajesh Kandoi and Associates, we offer a wide range of expert financial and advisory services
+                        designed to meet the diverse needs of businesses and individuals.
+                    </p>
+                </div>
+            </section>
 
-      <div className="services-header">
-        <h2>Our Comprehensive Services</h2>
-        <p className="header-p">At Rajesh Kandoi and Associates, we offer a wide range of financial experts and advisory services designed to meet the diverse needs of businesses and individuals.</p>
-      </div>
+            <main className="services-content">
+                <div className="services-grid">
+                    {servicesData.map((service, index) => (
+                        <ServiceCard 
+                            key={index}
+                            icon={service.icon}
+                            title={service.title}
+                            description={service.description}
+                        />
+                    ))}
+                </div>
+            </main>
+
+
     {/* 5. Industries We Serve Section */}
           <section className="about-section industries-section">
             <h2>Industries We Serve</h2>

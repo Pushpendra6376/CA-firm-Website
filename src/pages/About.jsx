@@ -22,31 +22,9 @@ import {
   faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Data arrays to keep JSX clean
-const coreValues = [
-  { icon: faShieldAlt, title: "Integrity", text: "Our roots possess strong moral values which we carry in our professional work." },
-  { icon: faLock, title: "Confidentiality", text: "We understand the importance and value of our client’s information and maintain the highest standards of confidentiality." },
-  { icon: faBalanceScale, title: "Transparency", text: "We foster a clear, honest, and fair environment with our clients to achieve the utmost satisfaction and build lasting trust." },
-  { icon: faHandshake, title: "Respect", text: "We believe that mutual respect is the primary foundation of a harmonious and productive professional relationship." },
-  { icon: faStar, title: "Commitment", text: "We are deeply committed to providing the best professional services and exceeding our client’s expectations every single time." },
-];
-
-const industries = [
-  { icon: faIndustry, title: "Manufacturing", text: "Helping industries streamline compliance, cost control, and audits." },
-  { icon: faStore, title: "Retail & Trading", text: "Simplifying GST, invoicing, and inventory-related compliances." },
-  { icon: faLaptopCode, title: "Information Technology (IT)", text: "Advising startups and IT companies on tax planning & global expansion." },
-  { icon: faUsers, title: "Startups & Entrepreneurs", text: "Providing end-to-end support, from company registration to funding & compliance." },
-  { icon: faBuilding, title: "Real Estate & Construction", text: "Specialized accounting & taxation strategies for developers and builders." },
-  { icon: faHeart, title: "NGOs & Non-Profits", text: "Ensuring compliance, audits, and financial transparency for social organizations." },
-];
-
-const whyChooseUsPoints = [
-    "Experienced Professionals: Our team possesses deep, multi-domain expertise to handle all your financial needs.",
-    "Timely & Reliable: We value your time and ensure all services are delivered promptly and reliably.",
-    "Technology-Driven Approach: We leverage modern technology to ensure precision, efficiency, and accuracy in all our work.",
-    "Personalized Solutions: We believe one size does not fit all. We listen to your unique needs and craft customized solutions."
-];
-
+import industries from '../data/industries.js';
+import whyChooseUsPoints from '../data/whyChooseUsPoints.js';
+import coreValues from '../data/coreValues.js';
 
 function About() {
   return (
