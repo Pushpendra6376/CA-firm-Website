@@ -6,23 +6,10 @@ import "../styles/About.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faShieldAlt,
-  faLock,
-  faBalanceScale,
-  faHandshake,
-  faStar,
   faBullseye,
   faLightbulb,
-  faIndustry,
-  faStore,
-  faLaptopCode,
-  faBuilding,
-  faUsers,
-  faHeart,
   faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
-
-import industries from '../data/industries.js';
 import whyChooseUsPoints from '../data/whyChooseUsPoints.js';
 import coreValues from '../data/coreValues.js';
 
@@ -84,22 +71,6 @@ function About() {
           ))}
         </div>
       </section>
-
-      {/* 5. Industries We Serve Section */}
-      <section className="about-section industries-section">
-        <h2>Industries We Serve</h2>
-        <p className="section-subtitle">Our expertise spans across diverse sectors, allowing us to provide tailored financial solutions for each industry.</p>
-        <div className="industries-grid">
-          {industries.map((industry, index) => (
-            <div className="industry-card" key={index}>
-              <FontAwesomeIcon icon={industry.icon} className="industry-icon" />
-              <h3>{industry.title}</h3>
-              <p>{industry.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* 6. Why Choose Us Section */}
       <section className="about-section why-choose-us-section">
         <div className="why-choose-us-content">
