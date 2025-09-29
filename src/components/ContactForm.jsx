@@ -11,10 +11,10 @@ export default function ContactForm() {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_yk9fbki",   // Your Service ID
-      "template_wjmplsp",  // Auto-Reply Template ID
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       form.current,
-      "LdWiIxjfqn8avBXoo"  // Public Key
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     )
     .then(
       (result) => {
