@@ -1,121 +1,148 @@
+/* src/styles/Services.css */
+
 /* --- Global Variables --- */
 :root {
-  --primary-color: #3b82f6; /* blue-500 */
-  --dark-blue: #1e3a8a;    /* blue-800 */
-  --text-primary: #1f2937;  /* gray-800 */
-  --text-secondary: #4b5563; /* gray-600 */
-  --bg-light: #f9fafb;     /* gray-50 */
-  --border-radius: 0.75rem; /* rounded-xl */
+    --primary-color: #3b82f6;
+    --dark-blue: #1e3a8a;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --bg-light: #f9fafb;
+    --border-radius: 0.75rem;
 }
 
 /* --- Page Layout --- */
 .services-page {
-  background-color: var(--bg-light);
+    background-color: var(--bg-light);
 }
 
 /* --- Hero Section --- */
 .services-hero {
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 5rem 2rem;
-  background-size: cover;
-  background-position: center;
-  height: 40vh;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 5rem 2rem;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
 }
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(40, 39, 39, 0.85), rgba(40, 39, 39, 0.85));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(40, 39, 39, 0.85), rgba(40, 39, 39, 0.85));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .services-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  max-width: 700px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 700px;
 }
 .services-hero p {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  max-width: 700px;
-  opacity: 0.9;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    max-width: 700px;
+    opacity: 0.9;
 }
 
 /* --- Main Content & Grid --- */
 .services-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
 /* Responsive Grid Columns */
 @media (min-width: 640px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-/* --- Service Card Styles (from your HTML) --- */
+/* --- Service Card Styles (Now used by Industries too!) --- */
 .service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
-  opacity: 0;
-  transform: translateY(20px);
-  border-left: 4px solid var(--primary-color);
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    border-left: 4px solid var(--primary-color);
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
 }
 .service-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 .service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .service-icon-wrapper {
-  background-color: #e0f2fe;
-  padding: 0.75rem;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  width: 64px; /* Fixed width */
-  height: 64px; /* Fixed height */
+    background-color: #e0f2fe;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 64px;
+    height: 64px;
 }
+
 .service-icon {
-  font-size: 1.75rem;
+    font-size: 2.25rem;
+    line-height: 1;
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
 }
 .service-card p {
-  color: var(--text-secondary);
-  flex-grow: 1; /* Ensures cards in a row have the same height */
+    color: var(--text-secondary);
+    flex-grow: 1;
 }
+
+/* ✅ NEW and UPDATED Styles for Industries Section */
+.industries-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem 2rem 4rem 2rem; /* Add padding to space it out */
+    text-align: center;
+}
+
+.industries-section h2 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.industries-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto; /* Center the subtitle and add space below */
+}
+
+/* ❌ All old .industry-card, .industry-icon, etc., styles have been removed. */

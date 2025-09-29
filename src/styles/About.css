@@ -149,32 +149,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* 5. Industries Section */
-.industries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.industry-card {
-    background-color: var(--light-gray-bg);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.industry-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-shadow);
-}
-
-.industry-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
 /* 6. Why Choose Us Section */
 .why-choose-us-section {
     background-color: var(--dark-blue);

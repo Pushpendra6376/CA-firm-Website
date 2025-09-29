@@ -1,11 +1,9 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import heroImage from '../assets/services-hero.png';
 import '../styles/Services.css';
-import industries from '../data/industries.js';
+import industries from '../data/industries.js'; // This data file also needs to be updated to emojis
 import servicesData from '../data/ServicesData.js';
-
-
 
 // --- Reusable Service Card Component with Animation ---
 const ServiceCard = ({ icon, title, description }) => {
@@ -41,7 +39,7 @@ const ServiceCard = ({ icon, title, description }) => {
     return (
         <div ref={cardRef} className={`service-card ${isVisible ? 'visible' : ''}`}>
             <div className="service-icon-wrapper">
-                <FontAwesomeIcon icon={icon} className="service-icon" />
+                <span className="service-icon" role="img" aria-label={`${title} icon`}>{icon}</span>
             </div>
             <h3>{title}</h3>
             <p>{description}</p>
@@ -50,12 +48,10 @@ const ServiceCard = ({ icon, title, description }) => {
 };
 
 
-
-function Services() { 
-  return (
-    <div className="services-page">
-
-      <section className="services-hero" style={{ backgroundImage: `url(${heroImage})` }}>
+function Services() {
+    return (
+        <div className="services-page">
+            <section className="services-hero" style={{ backgroundImage: `url(${heroImage})` }}>
                 <div className="hero-overlay">
                     <h1>Our Comprehensive Services</h1>
                     <p>
@@ -68,7 +64,7 @@ function Services() {
             <main className="services-content">
                 <div className="services-grid">
                     {servicesData.map((service, index) => (
-                        <ServiceCard 
+                        <ServiceCard
                             key={index}
                             icon={service.icon}
                             title={service.title}
@@ -77,24 +73,26 @@ function Services() {
                     ))}
                 </div>
             </main>
-
-
-    {/* 5. Industries We Serve Section */}
-          <section className="about-section industries-section">
-            <h2>Industries We Serve</h2>
-            <p className="section-subtitle">Our expertise spans across diverse sectors, allowing us to provide tailored financial solutions for each industry.</p>
-            <div className="industries-grid">
-              {industries.map((industry, index) => (
-                <div className="industry-card" key={index}>
-                  <FontAwesomeIcon icon={industry.icon} className="industry-icon" />
-                  <h3>{industry.title}</h3>
-                  <p>{industry.text}</p>
+            
+            {/* ✅ UPDATED Industries Section */}
+            <section className="industries-section">
+                <h2>Industries We Serve</h2>
+                <p className="section-subtitle">Our expertise spans across diverse sectors, allowing us to provide tailored financial solutions for each industry.</p>
+                {/* ✅ Using 'services-grid' for consistent layout */}
+                <div className="services-grid">
+                    {industries.map((industry, index) => (
+                        // ✅ Reusing the ENTIRE ServiceCard component for perfect consistency!
+                        <ServiceCard
+                            key={index}
+                            icon={industry.icon}
+                            title={industry.title}
+                            description={industry.text}
+                        />
+                    ))}
                 </div>
-              ))}
-            </div>
-          </section>
-    </div>
-  )
+            </section>
+        </div>
+    )
 }
 
 export default Services;
