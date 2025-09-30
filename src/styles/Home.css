@@ -1,0 +1,364 @@
+/* src/styles/Home.css */
+
+/* --- General Page Styles --- */
+.home-page {
+    width: 100%;
+}
+
+/* --- Reusable CTA Button Styles --- */
+.cta-button {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+.cta-button:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+.cta-button.secondary {
+    background-color: transparent;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
+}
+.cta-button.secondary:hover {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+/* --- 1. Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 40vh;
+    max-height: 500px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* --- 2. Welcome Section --- */
+.welcome-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+.welcome-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 3rem;
+    background-color: #c5c9f3;
+    border-radius: 12px;
+}
+.welcome-image img {
+    margin: 0.5rem 0 0 0.5rem;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.welcome-text h2 {
+    font-size: 2.2rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+.welcome-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+/* --- 3. Core Services Section --- */
+.home-services-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9fafb;
+}
+.home-services-section h2 {
+    font-size: 2.2rem;
+    color: #1f2937;
+    margin-bottom: 2.5rem;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem auto;
+}
+.feature-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #c5c9f3;
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.feature-card h3 {
+    font-size: 1.4rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+.feature-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.learn-more-link {
+    color: #3b82f6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- 4. Why Choose Us Section (NEW) --- */
+.home-why-choose-us-section {
+    padding: 2rem 1rem;
+    background-color: #c5c9f3;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 1rem;
+}
+.home-why-choose-us-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+.home-why-choose-us-text h2 {
+    font-size: 2.2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    align-self: center;
+}
+.home-section-subtitle {
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.home-why-choose-us-list {
+    list-style: none;
+    padding: 0;
+    display: inline;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.home-why-choose-us-list li {
+    display: inline;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.home-why-choose-us-list .point-text h3 {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #1f2937;
+}
+.why-choose-us-list .point-text p {
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.home-why-choose-us-list .home-feature-icon{
+    font-size: 1.5rem;
+}
+
+.home-why-choose-us-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 5. Testimonials Section (NEW) --- */
+.testimonials-section {
+    padding: 4rem 2rem;
+    background-color: #f9fafb;
+    text-align: center;
+}
+.testimonials-section h2 {
+    font-size: 2.2rem;
+    color: #1f2937;
+    margin-bottom: 2.5rem;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.testimonial-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+.testimonial-card .quote {
+    font-style: italic;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.client-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.client-name {
+    font-weight: bold;
+    color: #1f2937;
+    display: block;
+}
+.client-company {
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* --- 6. Blogs Section (NEW) --- */
+.blogs-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+.blogs-section h2 {
+    font-size: 2.2rem;
+    color: #1f2937;
+    margin-bottom: 2.5rem;
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.blog-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.blog-content {
+    padding: 1.5rem;
+}
+.blog-category {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #3b82f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+.blog-content h3 {
+    font-size: 1.3rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+/* --- 7. Final CTA Section --- */
+.final-cta-section {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.final-cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.final-cta-section p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    opacity: 0.9;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .welcome-content, .why-choose-us-content {
+        grid-template-columns: 1fr;
+    }
+    .why-choose-us-image {
+        grid-row: 1; /* Puts image on top on smaller screens */
+    }
+    .testimonial-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
