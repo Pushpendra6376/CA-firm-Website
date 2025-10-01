@@ -35,8 +35,8 @@
 /* --- 1. Hero Section --- */
 .hero-section {
     position: relative;
-    height: 40vh;
-    max-height: 500px;
+    height: 80vh;
+    max-height: 700px;
     background-size: cover;
     background-position: center;
     color: white;
@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(17, 24, 39, 0.7);
+    background: linear-gradient(to right, rgba(40, 39, 39, 0.85), rgba(40, 39, 39, 0.85));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,64 +155,109 @@
     text-decoration: none;
 }
 
-/* --- 4. Why Choose Us Section (NEW) --- */
-.home-why-choose-us-section {
-    padding: 2rem 1rem;
-    background-color: #c5c9f3;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-    margin-bottom: 1rem;
-}
-.home-why-choose-us-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    gap: 3rem;
-}
-.home-why-choose-us-text h2 {
-    font-size: 2.2rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-    align-self: center;
-}
-.home-section-subtitle {
-    font-size: 1.1rem;
-    color: #1f2937;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-.home-why-choose-us-list {
-    list-style: none;
-    padding: 0;
-    display: inline;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-.home-why-choose-us-list li {
-    display: inline;
-    align-items: flex-start;
-    gap: 1rem;
-}
-.home-why-choose-us-list .point-text h3 {
-    display: inline-block;
-    font-size: 1.2rem;
-    color: #1f2937;
-}
-.why-choose-us-list .point-text p {
-    color: #4b5563;
-    line-height: 1.6;
+/* ExpertSection */
+.experts-container {
+  background-color: #f9fafb; /* Light beige background */
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 12px;
 }
 
-.home-why-choose-us-list .home-feature-icon{
-    font-size: 1.5rem;
+/* Header Text Styling */
+.header-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
 
-.home-why-choose-us-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.header-text h2 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.header-text p {
+  font-size: 1.3rem;
+  color: #555;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+}
+
+/* Wrapper for the circles */
+.stats-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem; /* Space between circles */
+  flex-wrap: wrap; /* Allows circles to wrap on smaller screens */
+}
+
+/* Individual Circle Styling */
+.stat-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Makes the div a circle */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #c5c9f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensures nothing spills out of the circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* White overlay effect on circles */
+.stat-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.342); /* Semi-transparent white overlay */
+  border-radius: 50%;
+}
+
+/* Content inside the circle (number and label) */
+.stat-content {
+  position: relative; /* Brings content above the ::before overlay */
+  z-index: 1;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1rem;
+  margin-top: -5px;
+}
+
+
+/* Responsive Design for smaller screens */
+@media (max-width: 900px) {
+  .stats-wrapper {
+    flex-direction: column; /* Stacks circles vertically */
+    gap: 25px;
+  }
+  
+  .header-text h1, .header-text h2 {
+    font-size: 2rem;
+  }
+
+  .stat-circle {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 /* --- 5. Testimonials Section (NEW) --- */
@@ -220,6 +265,7 @@
     padding: 4rem 2rem;
     background-color: #f9fafb;
     text-align: center;
+    border-radius: 12px;
 }
 .testimonials-section h2 {
     font-size: 2.2rem;
@@ -239,6 +285,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: left;
+    background-color: #c5c9f3;
 }
 .testimonial-card .quote {
     font-style: italic;
@@ -328,6 +375,7 @@
     color: white;
     padding: 4rem 2rem;
     text-align: center;
+    border-radius: 12px;
 }
 .final-cta-section h2 {
     font-size: 2.2rem;

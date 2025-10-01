@@ -82,29 +82,44 @@ function Home() {
                 <Link to="/services" className="cta-button">View All Services</Link>
             </section>
             
-            {/* --- Section 4: Why Choose Us (NEW) --- */}
-            <section className="home-why-choose-us-section">
-                <div className="home-why-choose-us-content">
-                    <div className="home-why-choose-us-image">
-                        <img src={whyChooseUsImage} alt="Our Team" />
-                    </div>
-                    <div className="home-why-choose-us-text">
-                        <h2>Why Choose Us?</h2>
-                        <p className="home-section-subtitle">Choosing the right financial partner is critical. Here’s why we are the right choice for you.</p>
-                        <ul className="home-why-choose-us-list">
-                            {whyChooseUsPoints.map((point, index) => (
-                                <li key={index}>
-                                    <div className="home-feature-icon point-text">{point.icon}<h3>{point.title}</h3></div>
-                                    <div className="point-text">
-                                        <p>{point.description}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    
+            {/* {trusted experts section} */}
+            <div className="experts-container">
+                <div className="header-text">
+                    <h1>Trusted experts. Proven results.</h1>
+                    <h2><strong>It's kind of our thing.</strong></h2>
+                    <p>Rajesh kandoi & Co is a Certified Public Accounting Firm committed to serving our clients as a Trusted Advisor</p>
                 </div>
-            </section>
+
+                <div className="stats-wrapper">
+                    <div className="stat-circle image-1">
+                        <div className="stat-content">
+                            <span className="stat-number">22+</span>
+                            <span className="stat-label"><strong>Years of Experience</strong></span>
+                        </div>
+                    </div>
+
+                    <div className="stat-circle image-2">
+                        <div className="stat-content">
+                            <span className="stat-number">100+</span>
+                            <span className="stat-label"><strong>Services we Offer</strong></span>
+                        </div>
+                    </div>
+
+                    <div className="stat-circle image-3">
+                        <div className="stat-content">
+                            <span className="stat-number">20+</span>
+                            <span className="stat-label"><strong>Professional staff</strong></span>
+                        </div>
+                    </div>
+
+                    <div className="stat-circle image-4">
+                        <div className="stat-content">
+                            <span className="stat-number">200+</span>
+                            <span className="stat-label"><strong>Happy Clients</strong></span>
+                        </div>
+                    </div>
+            </div>
+            </div>
 
             {/* --- Section 5: Testimonials (NEW) --- */}
             <section className="testimonials-section">
