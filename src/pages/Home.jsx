@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 // Import your images from the assets folder
 import heroBackground from '../assets/home-assets/home-hero-background.png';
 import welcomeImage from '../assets/home-assets/welcome-handshake.png';
-// // --- NEW IMAGES ---
-import whyChooseUsImage from '../assets/home-assets/why-choose-us-image.png';
+// // --- NEW IMAGES ---    
 import client1 from '../assets/home-assets/client-1.png';
 import client2 from '../assets/home-assets/client-2.png';
+import client3 from '../assets/home-assets/client-3.jpg';
+import client4 from '../assets/home-assets/client-4.jpeg';
+import client5 from '../assets/home-assets/client-5.jpg';
+import client6 from '../assets/home-assets/client-6.jpg';
+import client7 from '../assets/home-assets/client-7.webp';
+import client8 from '../assets/home-assets/client-8.webp';
+import client9 from '../assets/home-assets/client-9.webp';
+import client10 from '../assets/home-assets/client-10.jpg';
 import blog1 from '../assets/home-assets/blog-1.png';
 import blog2 from '../assets/home-assets/blog-2.png';
 
@@ -30,21 +40,33 @@ function Home() {
         { icon: "💸", title: "Income Tax Planning", description: "Strategic tax planning and meticulous return filing.", link: "/services" },
     ];
 
-    const whyChooseUsPoints = [
-        { icon: "🧑‍💼", title: "Expert Team", description: "Our team comprises experienced professionals dedicated to your success." },
-        { icon: "🎯", title: "Client-Centric Approach", description: "We tailor our services to meet your unique business needs." },
-        { icon: "📈", title: "Proven Track Record", description: "A history of delivering results and fostering long-term partnerships." }
-    ];
-
     const testimonials = [
         { image: client1, name: "Aarav Sharma", company: "CEO, Innovate Solutions", quote: "Rajesh Kandoi and Associates transformed our financial strategy. Their expertise and dedication are unparalleled. Highly recommended!" },
-        { image: client2, name: "Priya Singh", company: "Founder, Creative Minds", quote: "As a startup, their guidance on compliance and tax was invaluable. They are a true partner in our growth." }
+        { image: client2, name: "Priya Singh", company: "Founder, Creative Minds", quote: "As a startup, their guidance on compliance and tax was invaluable. They are a true partner in our growth." },
+        { image: client3, name: "Rohit Verma", company: "Managing Director, TechWave", quote: "The team at Rajesh Kandoi and Associates is knowledgeable and responsive. They helped us navigate complex tax regulations with ease." },
+        { image: client4, name: "Sneha Kapoor", company: "CFO, GreenEarth", quote: "Their personalized approach and attention to detail set them apart. We trust them with all our financial matters." },
+        { image: client5, name: "Vikram Patel", company: "Owner, Patel Enterprises", quote: "Professional, reliable, and efficient. Rajesh Kandoi and Associates have been instrumental in our business success." },
+        { image: client6, name: "Anjali Mehta", company: "Director, Bright Future", quote: "Their expertise in tax planning saved us a significant amount. We are grateful for their support and guidance." },
+        { image: client7, name: "Karan Joshi", company: "CEO, FinTech Innovations", quote: "Rajesh Kandoi and Associates provided us with exceptional service. Their team is knowledgeable and always ready to assist." },
+        { image: client8, name: "Meera Nair", company: "Founder, HealthPlus", quote: "Their insights and strategic advice have been crucial for our financial planning. We highly recommend their services." },
+        { image: client9, name: "Sanjay Rao", company: "Managing Partner, Rao & Co.", quote: "The professionalism and expertise of Rajesh Kandoi and Associates are unmatched. They have been a great asset to our firm." },
+        { image: client10, name: "Lina D'Souza", company: "CFO, Global Ventures", quote: "We have been working with Rajesh Kandoi and Associates for years. Their consistent support and expert advice have been invaluable." },
     ];
     
     const latestBlogs = [
         { image: blog1, category: "Taxation", title: "Decoding the Latest GST Amendments for 2025", link: "/blogs" },
         { image: blog2, category: "Investment", title: "Smart Investment Strategies for the New Financial Year", link: "/blogs" }
     ];
+
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: true, // Set to true to show arrows
+    };
 
     return (
         <div className="home-page">
@@ -125,18 +147,20 @@ function Home() {
             <section className="testimonials-section">
                 <h2>What Our Clients Say</h2>
                 <div className="testimonial-grid">
-                    {testimonials.map((testimonial, index) => (
-                        <div className="testimonial-card" key={index}>
-                            <p className="quote">"{testimonial.quote}"</p>
-                            <div className="client-info">
-                                <img src={testimonial.image} alt={testimonial.name} className="client-photo" />
-                                <div className="client-details">
-                                    <span className="client-name">{testimonial.name}</span>
-                                    <span className="client-company">{testimonial.company}</span>
+                    <Slider {...sliderSettings}>
+                        {testimonials.map((testimonial, index) => (
+                            <div className="testimonial-card" key={index}>
+                                <p className="quote">"{testimonial.quote}"</p>
+                                <div className="client-info">
+                                    <img src={testimonial.image} alt={testimonial.name} className="client-photo" />
+                                    <div className="client-details">
+                                        <span className="client-name">{testimonial.name}</span>
+                                        <span className="client-company">{testimonial.company}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </Slider>
                 </div>
             </section>
 
