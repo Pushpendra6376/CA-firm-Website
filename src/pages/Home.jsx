@@ -87,7 +87,7 @@ function Home() {
                 <div className="header-text">
                     <h1>Trusted experts. Proven results.</h1>
                     <h2><strong>It's kind of our thing.</strong></h2>
-                    <p>Rajesh kandoi & Co is a Certified Public Accounting Firm committed to serving our clients as a Trusted Advisor</p>
+                    <p>Rajesh Kandoi & Associates is a Certified Public Accounting Firm committed to serving our clients as a Trusted Advisor</p>
                 </div>
 
                 <div className="stats-wrapper">
