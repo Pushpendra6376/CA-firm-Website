@@ -7,7 +7,6 @@ import allPosts from '../data/blogsData.js';
 import heroImage from '../assets/Blogs-assets/Blogs-header.png';
 import '../styles/Blogs.css';
 
-
 // --- Article Modal Component ---
 const ArticleModal = ({ post, onClose }) => {
     useEffect(() => {
@@ -31,7 +30,6 @@ const ArticleModal = ({ post, onClose }) => {
         </div>
     );
 };
-
 
 // --- Blog Data with FULL Expanded Content ---
 
@@ -180,3 +178,5 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+
