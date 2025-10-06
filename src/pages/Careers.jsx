@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faTimes, faBullseye, faCheckCircle, faClock, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
-import emailjs from '@emailjs/browser';
 import careersImage from '../assets/careers.png' ;
 
 import '../styles/Careers.css';

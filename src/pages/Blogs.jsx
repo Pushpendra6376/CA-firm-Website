@@ -32,7 +32,6 @@ const ArticleModal = ({ post, onClose }) => {
 };
 
 // --- Blog Data with FULL Expanded Content ---
-
 const Blogs = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
