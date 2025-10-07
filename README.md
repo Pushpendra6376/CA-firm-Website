@@ -1,6 +1,5 @@
 
-live link:- Rajeshkandoi.netlify.app
-
+live link:- https://rajeshkandoi.netlify.app/
 
 # React + Vite
 
